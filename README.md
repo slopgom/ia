@@ -1,4 +1,4 @@
-# ia
+# IA
 Todo sobre las verdades y mentiras de la IA
 
 # 🌐 Diseño de una Página Web (Frontend)
@@ -34,4 +34,4 @@ Vamos a diseñar una **página web completa enfocada en el frontend**, donde se 
 
 1. **Forkea** este repositorio desde GitHub.  
 2. Crea tu **propia rama** para trabajar en el proyecto.
-3. Y todo tuyo.
+3. Y todo tuyo. No os olvidéis de la metodología.

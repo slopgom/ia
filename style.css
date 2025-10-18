@@ -98,8 +98,9 @@ h2 {
 
 .navbar a:hover,
 .navbar a.active {
-  color: var(--color-accent);
+  color: var(--color-secondary);
 }
+
 
 
 

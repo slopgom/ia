@@ -1,12 +1,12 @@
-/* =========================
+/* =====================
    ESTILOS GENERALES
 ========================= */
 :root {
-  --color-primary: #4b7bec;
-  --color-secondary: #2d3436;
-  --color-light: #f5f6fa;
-  --color-dark: #1e272e;
-  --color-accent: #00cec9;
+  --color-primary: #8e44ad; /* morado eléctrico */
+  --color-secondary: #e84393; /* rosa fuerte */
+  --color-light: #f8f8f8; /* fondo claro */
+  --color-dark: #2d3436; /* texto oscuro */
+  --color-accent: #00cec9; /* acento / hover */
   --max-width: 1100px;
   --font-title: 'Poppins', sans-serif;
   --font-body: 'Open Sans', sans-serif;
@@ -60,7 +60,7 @@ h2 {
 
 
 
-/* =========================
+/* ======================
    CABECERA Y NAVEGACIÓN
 ========================= */
 .header {
@@ -104,11 +104,12 @@ h2 {
 
 
 
-/* =============
+
+/* ================
    INICIO
-================ */
+==================== */
 .intro {
-  background: linear-gradient(135deg, #4b7bec, #00cec9);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: white;
   text-align: center;
   padding: 6rem 2rem;
@@ -129,20 +130,21 @@ h2 {
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-light);
+  background-color: var(--color-accent);
+  color: white;
+  transform: scale(1.05);
 }
-
 
 
 
 
 /* ==============
    HISTORIA
-================= */
+================== */
 .history .timeline {
   display: grid;
   grid-template-columns: 1fr;
@@ -166,9 +168,10 @@ h2 {
 
 
 
-/* =====================
+
+/* =========================
    VERDADES y MENTIRAS
-======================= */
+========================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -190,16 +193,16 @@ h2 {
 }
 
 .card h3 {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: 0.5rem;
 }
 
 
 
 
-/* ==============
+/* ==================
    RECURSOS
-================= */
+===================== */
 .resources ul {
   list-style: none;
   margin-top: 1.5rem;
@@ -215,7 +218,7 @@ h2 {
 }
 
 .resources li:hover {
-  background: #dfe6e9;
+  background: #f0f0f0;
 }
 
 .resources a {
@@ -238,7 +241,6 @@ h2 {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
-
 
 
 
@@ -267,3 +269,4 @@ h2 {
     font-size: 1.5rem;
   }
 }
+

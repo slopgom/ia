@@ -171,4 +171,41 @@ main {
     margin-top: 10px;
 }
 
+/* 6. RESPONSIVE*/
 
+@media (max-width: 600px) {
+    
+    .main-header {
+        flex-direction: column; 
+        padding: 15px 20px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column; 
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .main-nav ul li a {
+        align-items: center;
+    }
+    
+    .section-header {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .btn {
+        width: 100%; 
+        margin-top: 10px;
+    }
+    
+    .lista-contenidos {
+        grid-template-columns: 1fr; 
+    }
+
+    img {
+    max-width: 100%;
+    height: auto; 
+}
+}

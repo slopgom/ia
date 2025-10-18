@@ -35,3 +35,30 @@ Vamos a diseñar una **página web completa enfocada en el frontend**, donde se 
 1. **Forkea** este repositorio desde GitHub.  
 2. Crea tu **propia rama** para trabajar en el proyecto.
 3. Y todo tuyo. No os olvidéis de la metodología.
+
+---
+## Mi Implementación: IA - Explorando Verdades y Mentiras
+
+**Autor:** Francisco José Jiménez López (Alumno de 2º DAW)
+**Propósito:** Desarrollar una aplicación web simple, responsive y funcional que demuestre la implementación de las tecnologías Frontend (HTML, CSS, JS) y la aplicación de un flujo de trabajo profesional con Git.
+
+### Estructura del Proyecto 
+
+| Tecnología | Conceptos Demostrados |
+| :--- | :--- |
+| **HTML5** | Semántica, Autoría, Llamada a JS (`onclick`). |
+| **CSS3** | Diseño Minimalista, Layout Responsive, Clase `.hidden`, y `max-width: 100%` para imágenes. |
+| **JavaScript** | Manipulación del DOM, uso de `classList.toggle()` para el interruptor (toggle). |
+
+### Funcionalidad Clave: Mostrar/Ocultar (Toggle)
+
+El botón "Ocultar Sección" en los apartados de Verdades y Mentiras llama a la función `alternarVisibilidad()` en `js/main.js`. Esta función utiliza `classList.toggle('hidden')` para añadir o quitar la clase CSS y controlar la visibilidad del contenido.
+
+### Pasos para la Revisión
+
+Para revisar las funcionalidades implementadas:
+
+1.  Abre el archivo `index.html` en el navegador.
+2.  Comprueba la funcionalidad de los botones **Mostrar/Ocultar Sección**.
+3.  **Redimensiona la ventana** para verificar la adaptación del diseño a dispositivos móviles.
+---

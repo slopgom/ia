@@ -131,14 +131,15 @@ h2 {
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   color: white;
   transform: scale(1.05);
 }
+
 
 
 

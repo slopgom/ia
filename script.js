@@ -16,3 +16,25 @@ for (let i = 0; i < botones.length; i++) {
 }
 
 
+// Filtros
+let botonesFiltro = document.querySelectorAll('.filtros .btn');
+let tarjetas = document.querySelectorAll('.tarjeta');
+
+for (let i = 0; i < botonesFiltro.length; i++) {
+  botonesFiltro[i].onclick = () => {
+    for (let j = 0; j < botonesFiltro.length; j++) {
+      botonesFiltro[j].classList.remove('activo');
+    }
+
+    botonesFiltro[i].classList.add('activo');
+    let tipo = botonesFiltro[i].dataset.filter;
+
+    for (let k = 0; k < tarjetas.length; k++) {
+      if (tipo == 'todos' || tarjetas[k].classList.contains(tipo)) {
+        tarjetas[k].style.display = 'inline-block';
+      } else {
+        tarjetas[k].style.display = 'none';
+      }
+    }
+  };
+}

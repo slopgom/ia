@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA: Verdades y Mitos</title>
+    <link rel="icon" href="pngwing.com.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="pngwing.com.png" alt="IA Logo" />
+            <h1>IA: Verdades y Mitos</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-icon">
+                <img src="pngwing.com.png" alt="Chip IA">
+            </div>
+            <h2>Descubre la Verdad sobre la Inteligencia Artificial</h2>
+            <p>Separa los hechos de la ficción. Explora las verdades científicas y desmitifica las creencias populares
+                sobre la IA.</p>
+
+            <div class="info-cards">
+                <div class="card-info verdad">
+                    <span>⚡</span>
+                    <h3>Verdades</h3>
+                    <p>Hechos respaldados por la ciencia</p>
+                </div>
+                <div class="card-info mito">
+                    <span>❗</span>
+                    <h3>Mitos</h3>
+                    <p>Conceptos erróneos comunes</p>
+                </div>
+                <div class="card-info explicacion">
+                    <span>💡</span>
+                    <h3>Explicaciones</h3>
+                    <p>Información clara y detallada</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="filtros">
+            <button class="btn activo" data-filter="todos">Todos</button>
+            <button class="btn" data-filter="verdad">Verdades</button>
+            <button class="btn" data-filter="mito">Mitos</button>
+        </section>
+
+        <section class="lista-contenidos">
+            <div class="tarjeta mito">
+                <div class="tag">Conciencia</div>
+                <h4>La IA puede pensar y sentir como los humanos</h4>
+                <button class="revelar">Revelar respuesta</button>
+                <p class="respuesta">❌ Mito: La IA no tiene consciencia ni emociones. Solo procesa datos y patrones.</p>
+            </div>
+
+            <div class="tarjeta verdad">
+                <div class="tag">Aprendizaje</div>
+                <h4>La IA puede aprender y mejorar con el tiempo</h4>
+                <button class="revelar">Revelar respuesta</button>
+                <p class="respuesta">✅ Verdad: Los algoritmos de aprendizaje automático mejoran con más datos y
+                    experiencia.</p>
+            </div>
+
+            <div class="tarjeta mito">
+                <div class="tag">Empleo</div>
+                <h4>La IA reemplazará todos los trabajos humanos</h4>
+                <button class="revelar">Revelar respuesta</button>
+                <p class="respuesta">❌ Mito: Sustituirá tareas repetitivas, pero también creará nuevos empleos
+                    tecnológicos.</p>
+            </div>
+
+            <div class="tarjeta verdad">
+                <div class="tag">Ética</div>
+                <h4>Los sistemas de IA pueden tener sesgos</h4>
+                <button class="revelar">Revelar respuesta</button>
+                <p class="respuesta">✅ Verdad: Los sesgos pueden provenir de los datos con los que fue entrenada la IA.
+                </p>
+            </div>
+
+            <div class="tarjeta mito">
+                <div class="tag">Precisión</div>
+                <h4>La IA es infalible y nunca comete errores</h4>
+                <button class="revelar">Revelar respuesta</button>
+                <p class="respuesta">❌ Mito: Los modelos de IA pueden equivocarse si los datos o contextos son
+                    incorrectos.</p>
+            </div>
+
+            <div class="tarjeta verdad">
+                <div class="tag">Aplicaciones</div>
+                <h4>La IA está presente en muchos dispositivos cotidianos</h4>
+                <button class="revelar">Revelar respuesta</button>
+                <p class="respuesta">✅ Verdad: Asistentes de voz, cámaras inteligentes y sistemas de recomendación usan
+                    IA.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IA: Verdades y Mitos</title>
+    <title>Verdades sobre IA - IA: Verdades y Mitos</title>
     <link rel="icon" href="pngwing.com.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -19,10 +19,17 @@
         </div>
         <nav class="navbar">
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="verdades.html" class="nav-link active">Verdades</a></li>
+                <li><a href="mitos.html" class="nav-link">Mitos</a></li>
                 <li><a href="explicaciones.html" class="nav-link">Explicaciones</a></li>
                 <li><a href="recursos.html" class="nav-link">Recursos</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -31,43 +38,16 @@
             <div class="hero-icon">
                 <img src="pngwing.com.png" alt="Chip IA">
             </div>
-            <h2>Descubre la Verdad sobre la Inteligencia Artificial</h2>
-            <p>Separa los hechos de la ficción. Explora las verdades científicas y desmitifica las creencias populares
-                sobre la IA.</p>
-
-            <div class="info-cards">
-                <div class="card-info verdad">
-                    <span>⚡</span>
-                    <h3>Verdades</h3>
-                    <p>Hechos respaldados por la ciencia</p>
-                </div>
-                <div class="card-info mito">
-                    <span>❗</span>
-                    <h3>Mitos</h3>
-                    <p>Conceptos erróneos comunes</p>
-                </div>
-                <div class="card-info explicacion">
-                    <span>💡</span>
-                    <h3>Explicaciones</h3>
-                    <p>Información clara y detallada</p>
-                </div>
-            </div>
+            <h2>Verdades sobre la Inteligencia Artificial</h2>
+            <p>Hechos respaldados por la ciencia y la investigación actual sobre IA.</p>
         </section>
 
         <section class="filtros">
             <button class="btn activo" data-filter="todos">Todos</button>
-            <button class="btn" data-filter="verdad">Verdades</button>
-            <button class="btn" data-filter="mito">Mitos</button>
+            <button class="btn" data-filter="verdad">Solo Verdades</button>
         </section>
 
         <section class="lista-contenidos">
-            <div class="tarjeta mito">
-                <div class="tag">Conciencia</div>
-                <h4>La IA puede pensar y sentir como los humanos</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: La IA no tiene consciencia ni emociones. Solo procesa datos y patrones.</p>
-            </div>
-
             <div class="tarjeta verdad">
                 <div class="tag">Aprendizaje</div>
                 <h4>La IA puede aprender y mejorar con el tiempo</h4>
@@ -76,28 +56,12 @@
                     experiencia.</p>
             </div>
 
-            <div class="tarjeta mito">
-                <div class="tag">Empleo</div>
-                <h4>La IA reemplazará todos los trabajos humanos</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Sustituirá tareas repetitivas, pero también creará nuevos empleos
-                    tecnológicos.</p>
-            </div>
-
             <div class="tarjeta verdad">
                 <div class="tag">Ética</div>
                 <h4>Los sistemas de IA pueden tener sesgos</h4>
                 <button class="revelar">Revelar respuesta</button>
                 <p class="respuesta">✅ Verdad: Los sesgos pueden provenir de los datos con los que fue entrenada la IA.
                 </p>
-            </div>
-
-            <div class="tarjeta mito">
-                <div class="tag">Precisión</div>
-                <h4>La IA es infalible y nunca comete errores</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Los modelos de IA pueden equivocarse si los datos o contextos son
-                    incorrectos.</p>
             </div>
 
             <div class="tarjeta verdad">
@@ -116,28 +80,12 @@
                     complejos en grandes conjuntos de datos.</p>
             </div>
 
-            <div class="tarjeta mito">
-                <div class="tag">Desarrollo</div>
-                <h4>Solo los expertos en programación pueden crear IA</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Hay herramientas 'No-Code' y 'Low-Code' que permiten a personas sin
-                    profundos conocimientos de código usar modelos de IA.</p>
-            </div>
-
             <div class="tarjeta verdad">
                 <div class="tag">Capacidad</div>
                 <h4>La IA puede generar contenido original (texto, imágenes)</h4>
                 <button class="revelar">Revelar respuesta</button>
                 <p class="respuesta">✅ Verdad: Modelos avanzados como GPT-4 o DALL-E pueden crear contenido nuevo, pero
                     basado en el entrenamiento previo.</p>
-            </div>
-
-            <div class="tarjeta mito">
-                <div class="tag">Singularidad</div>
-                <h4>La 'singularidad' (IA que se mejora a sí misma) es inminente</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Es un concepto teórico y futurista. La mayoría de los científicos cree que
-                    estamos muy lejos de este punto.</p>
             </div>
 
             <div class="tarjeta verdad">

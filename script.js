@@ -1,51 +1,51 @@
-// Mostrar respuestas
-let botones = document.querySelectorAll('.revelar');
+// =========================
+// 1. Lógica de Mostrar/Ocultar Respuestas (Botones 'Revelar')
+// =========================
+const botonesRevelar = document.querySelectorAll('.revelar');
 
-for (let i = 0; i < botones.length; i++) {
-  botones[i].onclick = () => {
-    let respuesta = botones[i].nextElementSibling;
+botonesRevelar.forEach(boton => {
+  boton.addEventListener('click', () => {
+    const respuesta = boton.nextElementSibling;
 
-    if (respuesta.style.display == 'block') {
+    // Alternar la visibilidad de la respuesta
+    if (respuesta.style.display === 'block') {
       respuesta.style.display = 'none';
-      botones[i].textContent = 'Revelar respuesta';
+      boton.textContent = 'Revelar respuesta';
     } else {
       respuesta.style.display = 'block';
-      botones[i].textContent = 'Ocultar respuesta';
+      boton.textContent = 'Ocultar respuesta';
     }
-  };
-}
+  });
+});
 
-// Filtros
-let botonesFiltro = document.querySelectorAll('.filtros .btn');
-let tarjetas = document.querySelectorAll('.tarjeta');
+// =========================
+// 2. Lógica de Filtrado de Contenidos
+// =========================
+const botonesFiltro = document.querySelectorAll('.filtros .btn');
+const tarjetas = document.querySelectorAll('.tarjeta');
 
-for (let i = 0; i < botonesFiltro.length; i++) {
-  botonesFiltro[i].onclick = () => {
-    for (let j = 0; j < botonesFiltro.length; j++) {
-      botonesFiltro[j].classList.remove('activo');
-    }
+botonesFiltro.forEach(boton => {
+  boton.addEventListener('click', () => {
+    
+    // 1. Remover 'activo' de todos los botones y añadir al clickeado
+    botonesFiltro.forEach(b => b.classList.remove('activo'));
+    boton.classList.add('activo');
+    
+    const tipoFiltro = boton.dataset.filter;
 
-    botonesFiltro[i].classList.add('activo');
-    let tipo = botonesFiltro[i].dataset.filter;
-
-    for (let k = 0; k < tarjetas.length; k++) {
-      if (tipo == 'todos' || tarjetas[k].classList.contains(tipo)) {
-        tarjetas[k].style.display = 'inline-block';
+    // 2. Iterar sobre las tarjetas y aplicar el filtro
+    tarjetas.forEach(tarjeta => {
+      // Si el filtro es 'todos' o la tarjeta contiene la clase del filtro ('verdad' o 'mito')
+      if (tipoFiltro === 'todos' || tarjeta.classList.contains(tipoFiltro)) {
+        tarjeta.style.display = 'inline-block'; // Usar 'inline-block' como lo tienes en CSS
       } else {
-        tarjetas[k].style.display = 'none';
+        tarjeta.style.display = 'none';
       }
-    }
-  };
-}
+    });
+  });
+});
 
-// Navegación simple
-let navLinks = document.querySelectorAll('.nav-link');
-
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].onclick = () => {
-    for (let j = 0; j < navLinks.length; j++) {
-      navLinks[j].classList.remove('active');
-    }
-    navLinks[i].classList.add('active');
-  };
-}
+// NOTA: La gestión de la clase 'active' en la navegación (nav-link)
+// se ha eliminado de este script. Se recomienda gestionarla de forma
+// estática en el HTML de cada página para simplificar y asegurar
+// que el enlace correcto esté activo.

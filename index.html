@@ -1,66 +1,103 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA: Verdades y Mitos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="pngwing.com.png" type="image/png">
+    <meta name="author" content="Francisco José Jiménez López (Alumno 2º de DAW)">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>IA: Verdades y Mentiras</title>
 </head>
 <body>
-
-    <header>
-        <h1>🤖 IA: Verdades y Mitos</h1>
-        <p>Desmintiendo creencias y explorando la realidad de la Inteligencia Artificial.</p>
+    <header class="main-header">
+        <div>
+            <h1>IA: Verdades y Mentiras</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#introduccion">Inicio</a></li>
+                <li><a href="#verdades">Verdades</a></li>
+                <li><a href="#mentiras">Mentiras</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section id="filtros">
-            <h2>Filtra la Información</h2>
-            <div class="botones-filtro">
-                <button data-filter="all" class="activo">Todos</button>
-                <button data-filter="verdad">Verdades</button>
-                <button data-filter="mito">Mitos</button>
+
+        <section id="introduccion" class="hero">
+            <h2>El Futuro No es lo que Piensas. Es lo que Sabes.</h2>
+            <p>La Inteligencia Artificial (IA) ha pasado de la ciencia ficción a la realidad cotidiana. En esta página,
+                mostraremos algunas de lñas verdades y mentiras de la IA.</p>
+            <img src="img/ia-cerebro.webp" alt="Imagen de un cerebro digitalizado con tecnología IA">
+        </section>
+
+        <section id="verdades" class="section section-verdades">
+            <div class="section-header">
+                <h3>Las Grandes Verdades de la IA</h3>
+                <button id="verdades-btn" class="btn" onclick="alternarVisibilidad('verdades-list')">Ocultar
+                    Sección</button>
+            </div>
+
+            <div id="verdades-list" class="lista-contenidos">
+
+                <article class="carta">
+                    <h4>Verdad 1: Acelera la Programación</h4>
+                    <p>La IA (como Copilot o ChatGPT) ayuda a generar código base, sugerir soluciones y detectar errores
+                        sencillos, aumentando drásticamente la productividad de los desarrolladores.</p>
+                    <span class="tag">Productividad</span>
+                </article>
+
+                <article class="carta">
+                    <h4>Verdad 2: Mejora la Accesibilidad Web</h4>
+                    <p>Las herramientas de IA pueden automatizar la generación de subtítulos, describir imágenes
+                        (etiquetas ALT)
+                        o adaptar contenido, haciendo las webs más accesibles para usuarios con diversas necesidades.
+                    </p>
+                    <span class="tag">Inclusión</span>
+                </article>
+
+                <article class="carta">
+                    <h4>Verdad 3: Optimiza el Despliegue</h4>
+                    <p>En el ámbito del desarrollo, la IA se usa para predecir fallos en producción, optimizar el uso de
+                        recursos en la nube y automatizar pruebas complejas (QA), mejorando la fiabilidad de las
+                        aplicaciones.</p>
+                    <span class="tag">Desarrollo</span>
+                </article>
             </div>
         </section>
 
-        <section id="contenido">
-            <article class="card mito" data-category="mito">
-                <h3>El mito de la IA todopoderosa</h3>
-                <p class="afirmacion">"La IA tomará el control del mundo en la próxima década."</p>
-                <button class="respuesta-toggle">Revelar Respuesta</button>
-                <div class="respuesta-contenido hidden">
-                    <p class="etiqueta-mito">❌ MITO</p>
-                    <p>**Explicación:** Las IAs actuales son IAs "estrechas" (Narrow AI), diseñadas para tareas específicas (ej. reconocimiento de imágenes). No poseen conciencia, intenciones ni la capacidad de automejora exponencial, lo que desmiente la idea de una singularidad inmediata o toma de control.</p>
-                </div>
-            </article>
+        <section id="mentiras" class="section bg-grey">
+            <div class="section-header">
+                <h3>Los Mitos Falsos de la IA</h3>
+                <button id="mentiras-btn" class="btn" onclick="alternarVisibilidad('mentiras-list')">Ocultar
+                    Sección</button>
+            </div>
 
-            <article class="card verdad" data-category="verdad">
-                <h3>La IA ya está en uso</h3>
-                <p class="afirmacion">"La IA ya se usa para tomar decisiones financieras críticas."</p>
-                <button class="respuesta-toggle">Revelar Respuesta</button>
-                <div class="respuesta-contenido hidden">
-                    <p class="etiqueta-verdad">✅ VERDAD</p>
-                    <p>**Explicación:** Los algoritmos de IA son la base del trading de alta frecuencia, la evaluación de riesgos crediticios y la detección de fraudes. Si bien están supervisados, ejecutan decisiones complejas a velocidades imposibles para humanos.</p>
-                </div>
-            </article>
+            <div id="mentiras-list" class="lista-contenidos">
 
-            <article class="card mito" data-category="mito">
-                <h3>El mito del aprendizaje sin datos</h3>
-                <p class="afirmacion">"Los modelos de IA pueden aprender sin la necesidad de grandes cantidades de datos."</p>
-                <button class="respuesta-toggle">Revelar Respuesta</button>
-                <div class="respuesta-contenido hidden">
-                    <p class="etiqueta-mito">❌ MITO</p>
-                    <p>**Explicación:** La mayoría de los modelos de Aprendizaje Profundo (Deep Learning) son voraces consumidores de datos. Necesitan millones de ejemplos para generalizar y hacer predicciones fiables. Es la calidad y cantidad de datos lo que define su rendimiento.</p>
-                </div>
-            </article>
+                <article class="ia-mito">
+                    <h4>Mito 1: La IA Sustituirá a Todos los Desarrolladores</h4>
+                    <p>Realidad: La IA es una herramienta. Sustituirá tareas repetitivas, pero aumentará la necesidad de
+                        desarrolladores con visión estratégica, que sepan formular problemas y supervisar el código
+                        generado.</p>
+                </article>
+
+                <article class="ia-mito">
+                    <h4>Mito 2: La IA es 100% Objetiva y Libre de Sesgos</h4>
+                    <p>Realidad: La IA es un reflejo de los datos con los que se entrena. Si los datos reflejan sesgos
+                        humanos o históricos, el modelo de IA aprenderá y propagará esos mismos sesgos. La objetividad
+                        debe ser supervisada.</p>
+                </article>
+
+                <article class="ia-mito">
+                    <h4>Mito 3: La IA tiene Conciencia o Sentimientos</h4>
+                    <p>Realidad: La IA opera puramente en base a modelos matemáticos, algoritmos y datos. No tiene
+                        autoconciencia, deseos ni emociones. Sus respuestas son predicciones estadísticas.</p>
+                </article>
+            </div>
         </section>
+
     </main>
-
-    <footer>
-        <p>&copy; 2024 Nacho - Proyecto IA: Verdades y Mitos.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

@@ -37,49 +37,27 @@ Vamos a diseñar una **página web completa enfocada en el frontend**, donde se 
 3. Y todo tuyo. No os olvidéis de la metodología.
 
 ---
+## Mi Implementación: IA - Explorando Verdades y Mentiras
 
 # IA: Verdades y Mitos 
 
-Este proyecto es una página web informativa e interactiva que busca **diferenciar los hechos reales de los mitos comunes sobre la Inteligencia Artificial (IA)**.
-A través de un diseño moderno y dinámico, permite al usuario explorar distintas afirmaciones, filtrarlas por categoría y revelar las respuestas correspondientes.
+### Estructura del Proyecto 
 
+| Tecnología | Conceptos Demostrados |
+| :--- | :--- |
+| **HTML5** | Semántica, Autoría, Llamada a JS (`onclick`). |
+| **CSS3** | Diseño Minimalista, Layout Responsive, Clase `.hidden`, y `max-width: 100%` para imágenes. |
+| **JavaScript** | Manipulación del DOM, uso de `classList.toggle()` para el interruptor (toggle). |
+
+### Funcionalidad Clave: Mostrar/Ocultar (Toggle)
+
+El botón "Ocultar Sección" en los apartados de Verdades y Mentiras llama a la función `alternarVisibilidad()` en `js/main.js`. Esta función utiliza `classList.toggle('hidden')` para añadir o quitar la clase CSS y controlar la visibilidad del contenido.
+
+### Pasos para la Revisión
+
+Para revisar las funcionalidades implementadas:
+
+1.  Abre el archivo `index.html` en el navegador.
+2.  Comprueba la funcionalidad de los botones **Mostrar/Ocultar Sección**.
+3.  **Redimensiona la ventana** para verificar la adaptación del diseño a dispositivos móviles.
 ---
-
-## Propósito del proyecto
-
-El objetivo principal es **educar y desmentir creencias erróneas** sobre la IA, ofreciendo explicaciones claras y accesibles para el público general.
-Se busca fomentar la comprensión sobre cómo funcionan realmente los sistemas de inteligencia artificial y su impacto en la vida cotidiana.
-
----
-
-## 📁 Estructura de archivos
-
-```
-📂 IA-Verdades-y-Mitos/
-├── index.html         # Estructura principal del sitio
-├── style.css          # Estilos visuales y diseño responsivo
-├── script.js          # Funcionalidad interactiva (filtros y revelado de respuestas)
-├── pngwing.com.png    # Icono y logo del sitio
-└── README.md          # Descripción general del proyecto
-```
-
----
-
-## Cómo ejecutar o visualizar el proyecto
-
-1. **Descarga o clona** este repositorio en tu equipo.
-2. Asegúrate de que todos los archivos (`index.html`, `style.css`, `script.js` y la imagen) estén en la misma carpeta.
-3. Abre el archivo **`index.html`** con tu navegador preferido (por ejemplo, Chrome, Edge o Firefox).
-4. ¡Explora los mitos y verdades sobre la IA!
-
-   * Usa los botones de filtro para ver solo mitos, verdades o todos.
-   * Haz clic en **“Revelar respuesta”** para mostrar la explicación correspondiente.
-
----
-
-## Tecnologías utilizadas
-
-* **HTML5** – Estructura semántica del contenido.
-* **CSS3** – Estilo visual, animaciones y diseño adaptable.
-* **JavaScript** – Interactividad y manipulación dinámica del DOM.
-

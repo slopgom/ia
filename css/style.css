@@ -1,4 +1,6 @@
+/* ---------------------------------------------------- */
 /* 1. RESET Y VARIABLES GLOBALES (Paleta de colores moderna)*/
+/* ---------------------------------------------------- */
 :root {
     /* Paleta inspirada en tecnología */
     --color-principal: #1f7a8c;      /* Azul Teal/Cyan (Moderno) */
@@ -8,18 +10,20 @@
     --color-texto-principal: #1c1c1c;/* Texto casi negro */
     --color-borde: #e0e0e0;          /* Borde muy sutil */
     
+    /* Colores funcionales */
     --color-verdades: #2ecc71;       /* Verde para Éxito/Verdad */
     --color-mentiras: #e74c3c;       /* Rojo para Advertencia/Mito */
     
-    /* Tipografía moderna y limpia */
+    /* Tipografía moderna y limpia (Requiere link en index.html) */
     --font-principal: 'Inter', sans-serif;
-    --font-titulos: 'Bebas Neue', sans-serif; /* Impacto visual */
+    --font-titulos: 'Bebas Neue', sans-serif; 
 
-    --shadow-sutil: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave y moderna */
+    /* Estilos visuales comunes */
+    --shadow-sutil: 0 4px 12px rgba(0, 0, 0, 0.08); 
     --border-radius-base: 8px;
 }
 
-/* Reset mínimo */
+/* Reset mínimo para evitar problemas de espaciado */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,18 +33,23 @@
 body {
     font-family: var(--font-principal);
     color: var(--color-texto-principal);
-    background-color: var(--color-fondo-secundario); /* Fondo azul claro */
+    background-color: var(--color-fondo-secundario); 
     line-height: 1.6;
     padding-top: 80px; /* Espacio para el header fijo */
 }
 
+/* ---------------------------------------------------- */
 /* 2. CLASE DE FUNCIONALIDAD (PARA JS)*/
+/* ---------------------------------------------------- */
 .hidden {
+    /* CLASE CRUCIAL para el toggle: oculta completamente el contenido */
     display: none !important;
 }
 
 
+/* ---------------------------------------------------- */
 /* 3. HEADER Y NAVEGACIÓN (Diseño Sticky y Elevado)*/
+/* ---------------------------------------------------- */
 .main-header {
     background-color: var(--color-principal);
     color: var(--color-fondo-claro);
@@ -48,7 +57,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte para fixed header */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: fixed; /* Header Fijo */
     top: 0;
     left: 0;
@@ -63,12 +72,13 @@ body {
 }
 
 .header-subtitle {
+    /* Estilo para "Verdades y Mentiras" debajo de "IA" */
     font-family: var(--font-principal);
-    font-size: 0.5em; /* Más pequeño que el IA */
+    font-size: 0.5em; 
     font-weight: 300;
     display: block;
     line-height: 1;
-    margin-top: -5px; /* Ajuste fino */
+    margin-top: -5px; 
 }
 
 .main-nav ul {
@@ -82,7 +92,7 @@ body {
     padding: 10px 18px;
     display: block;
     border-radius: var(--border-radius-base);
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s;
 }
 
 .main-nav ul li a:hover {
@@ -90,7 +100,9 @@ body {
 }
 
 
+/* ---------------------------------------------------- */
 /* 4. SECCIONES Y CONTENIDO (Espacio y Jerarquía)*/
+/* ---------------------------------------------------- */
 main {
     max-width: 1100px;
     margin: 0 auto; 
@@ -98,6 +110,7 @@ main {
 }
 
 .hero {
+    /* Efecto de degradado sutil para el fondo */
     background: linear-gradient(135deg, var(--color-fondo-claro) 0%, var(--color-fondo-secundario) 100%);
     padding: 80px 40px;
     text-align: center;
@@ -129,7 +142,7 @@ main {
     height: auto;
     margin-top: 30px;
     border-radius: var(--border-radius-base);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más fuerte en hero img */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .section {
@@ -153,14 +166,16 @@ main {
     letter-spacing: 1px;
 }
 
+/* ---------------------------------------------------- */
 /* 5. BOTONES Y TARJETAS (Componentes limpios y elevados)*/
+/* ---------------------------------------------------- */
 
 .btn {
     background-color: var(--color-principal);
     color: var(--color-fondo-claro);
     border: none;
     padding: 10px 20px;
-    border-radius: 50px; /* Píldora moderna */
+    border-radius: 50px; /* Botón píldora moderno */
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
@@ -172,17 +187,19 @@ main {
 }
 
 .btn:active {
-    transform: translateY(1px); 
+    transform: translateY(1px); /* Feedback visual al pulsar */
 }
 
 
 .lista-contenidos {
+    /* Layout de Grid para que las tarjetas se adapten */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
     padding-top: 20px;
 }
 
+/* Estilos comunes para las tarjetas (DRY) */
 .carta, .ia-mito {
     background-color: var(--color-fondo-claro);
     border: 1px solid var(--color-borde);
@@ -194,13 +211,15 @@ main {
     flex-direction: column;
 }
 
+/* Efecto hover de elevación */
 .carta:hover, .ia-mito:hover {
     transform: translateY(-5px); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
 }
 
+/* Estilos específicos de VERDADES */
 .carta {
-    border-top: 5px solid var(--color-verdades); /* Borde de color más grueso */
+    border-top: 5px solid var(--color-verdades); 
 }
 .carta h4 {
     color: var(--color-verdades);
@@ -209,6 +228,7 @@ main {
     font-weight: 600;
 }
 
+/* Estilos específicos de MENTIRAS */
 .ia-mito {
     border-top: 5px solid var(--color-mentiras); 
 }
@@ -228,16 +248,18 @@ main {
     border-radius: 3px;
     font-size: 0.8em;
     font-weight: 600;
-    margin-top: auto; 
+    margin-top: auto; /* Para alinear etiquetas en la parte inferior */
     align-self: flex-start;
 }
 
 
-/* 6. RESPONSIVE (Ajustes para móvil)*/
+/* ---------------------------------------------------- */
+/* 6. RESPONSIVE (Ajustes para móvil y tablet)*/
+/* ---------------------------------------------------- */
 @media (max-width: 768px) {
     
     body {
-        padding-top: 100px; /* Más espacio para el header apilado */
+        padding-top: 100px; 
     }
     
     .main-header {
@@ -283,10 +305,10 @@ main {
     }
 
     .btn {
-        width: 100%; 
+        width: 100%; /* Botón de ancho completo en móvil */
     }
     
     .lista-contenidos {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* Una columna en móvil */
     }
 }

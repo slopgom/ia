@@ -38,7 +38,7 @@ Vamos a diseñar una **página web completa enfocada en el frontend**, donde se 
 
 ---
 
-# IA: Verdades y Mitos
+# IA: Verdades y Mitos 
 
 Este proyecto es una página web informativa e interactiva que busca **diferenciar los hechos reales de los mitos comunes sobre la Inteligencia Artificial (IA)**.
 A través de un diseño moderno y dinámico, permite al usuario explorar distintas afirmaciones, filtrarlas por categoría y revelar las respuestas correspondientes.

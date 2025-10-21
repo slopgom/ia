@@ -1,51 +1,85 @@
-// Mostrar respuestas
-let botones = document.querySelectorAll('.revelar');
+/**
+ * @file script.js
+ * @description Implementa la interactividad de la página IA: Verdades y Mitos.
+ * Incluye funciones para filtrar tarjetas por categoría (Mito/Verdad) y
+ * para alternar la visibilidad de las respuestas.
+ */
 
-for (let i = 0; i < botones.length; i++) {
-  botones[i].onclick = () => {
-    let respuesta = botones[i].nextElementSibling;
+// Se ejecuta cuando el documento HTML ha sido completamente cargado.
+document.addEventListener('DOMContentLoaded', init);
 
-    if (respuesta.style.display == 'block') {
-      respuesta.style.display = 'none';
-      botones[i].textContent = 'Revelar respuesta';
-    } else {
-      respuesta.style.display = 'block';
-      botones[i].textContent = 'Ocultar respuesta';
-    }
-  };
+/**
+ * Inicializa la funcionalidad de la página:
+ * 1. Configura los listeners para los botones de filtro.
+ * 2. Configura los listeners para los botones de 'Revelar Respuesta'.
+ * @function
+ */
+function init() {
+    setupFilterListeners();
+    setupToggleListeners();
 }
 
-// Filtros
-let botonesFiltro = document.querySelectorAll('.filtros .btn');
-let tarjetas = document.querySelectorAll('.tarjeta');
+/**
+ * Configura los event listeners para los botones de filtro (Todos, Verdades, Mitos).
+ * @function
+ */
+function setupFilterListeners() {
+    const filterButtons = document.querySelectorAll('#filtros button');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Elimina la clase 'activo' de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('activo'));
+            // Agrega la clase 'activo' al botón clickeado
+            this.classList.add('activo');
 
-for (let i = 0; i < botonesFiltro.length; i++) {
-  botonesFiltro[i].onclick = () => {
-    for (let j = 0; j < botonesFiltro.length; j++) {
-      botonesFiltro[j].classList.remove('activo');
-    }
-
-    botonesFiltro[i].classList.add('activo');
-    let tipo = botonesFiltro[i].dataset.filter;
-
-    for (let k = 0; k < tarjetas.length; k++) {
-      if (tipo == 'todos' || tarjetas[k].classList.contains(tipo)) {
-        tarjetas[k].style.display = 'inline-block';
-      } else {
-        tarjetas[k].style.display = 'none';
-      }
-    }
-  };
+            const filterType = this.getAttribute('data-filter');
+            filterItems(filterType);
+        });
+    });
 }
 
-// Navegación simple
-let navLinks = document.querySelectorAll('.nav-link');
+/**
+ * Muestra u oculta las tarjetas de contenido basándose en el tipo de filtro seleccionado.
+ * @function
+ * @param {string} filterType - El tipo de tarjeta a mostrar ('all', 'mito', 'verdad').
+ */
+function filterItems(filterType) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        // Muestra todas las tarjetas si el filtro es 'all'
+        if (filterType === 'all') {
+            card.style.display = 'block';
+        } else {
+            // Si la tarjeta NO coincide con el filtro, la oculta
+            if (card.getAttribute('data-category') === filterType) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    });
+}
 
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].onclick = () => {
-    for (let j = 0; j < navLinks.length; j++) {
-      navLinks[j].classList.remove('active');
-    }
-    navLinks[i].classList.add('active');
-  };
+/**
+ * Configura los event listeners para los botones 'Revelar Respuesta' en cada tarjeta.
+ * @function
+ */
+function setupToggleListeners() {
+    const toggleButtons = document.querySelectorAll('.respuesta-toggle');
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // El contenido de la respuesta es el siguiente elemento hermano del botón
+            const respuesta = this.nextElementSibling;
+
+            // Alterna la clase 'hidden' para mostrar u ocultar la respuesta
+            respuesta.classList.toggle('hidden');
+
+            // Cambia el texto del botón para reflejar su estado
+            if (respuesta.classList.contains('hidden')) {
+                this.textContent = 'Revelar Respuesta';
+            } else {
+                this.textContent = 'Ocultar Respuesta';
+            }
+        });
+    });
 }

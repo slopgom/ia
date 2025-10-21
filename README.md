@@ -39,8 +39,7 @@ Vamos a diseñar una **página web completa enfocada en el frontend**, donde se 
 ---
 ## Mi Implementación: IA - Explorando Verdades y Mentiras
 
-**Autor:** Francisco José Jiménez López (Alumno de 2º DAW)
-**Propósito:** Desarrollar una aplicación web simple, responsive y funcional que demuestre la implementación de las tecnologías Frontend (HTML, CSS, JS) y la aplicación de un flujo de trabajo profesional con Git.
+# IA: Verdades y Mitos 
 
 ### Estructura del Proyecto 
 

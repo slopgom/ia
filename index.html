@@ -12,7 +12,7 @@
 
 <body>
 
-    <header class="main-header">
+    <header class="main-header" role="banner">
         <div class="logo">
             <img src="pngwing.com.png" alt="IA Logo" />
             <h1>IA: Verdades y Mitos</h1>
@@ -26,8 +26,8 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
+    <main role="main">
+        <section class="hero" role="region" aria-label="Introducción a la Inteligencia Artificial">
             <div class="hero-icon">
                 <img src="pngwing.com.png" alt="Chip IA">
             </div>
@@ -35,7 +35,7 @@
             <p>Separa los hechos de la ficción. Explora las verdades científicas y desmitifica las creencias populares
                 sobre la IA.</p>
 
-            <div class="info-cards">
+            <div class="info-cards" role="group" aria-label="Estadísticas de contenido">
                 <div class="card-info verdad">
                     <span>⚡</span>
                     <h3>Verdades</h3>
@@ -54,99 +54,99 @@
             </div>
         </section>
 
-        <section class="filtros">
-            <button class="btn activo" data-filter="todos">Todos</button>
-            <button class="btn" data-filter="verdad">Verdades</button>
-            <button class="btn" data-filter="mito">Mitos</button>
+        <section class="filtros" role="group" aria-label="Filtros de contenido">
+            <button class="btn activo" data-filter="todos" aria-pressed="true" aria-controls="lista-contenidos">Todos</button>
+            <button class="btn" data-filter="verdad" aria-pressed="false" aria-controls="lista-contenidos">Verdades</button>
+            <button class="btn" data-filter="mito" aria-pressed="false" aria-controls="lista-contenidos">Mitos</button>
         </section>
 
-        <section class="lista-contenidos">
-            <div class="tarjeta mito">
+        <section class="lista-contenidos" id="lista-contenidos" role="feed" aria-label="Mitos y Verdades de la IA">
+            <article class="tarjeta mito" role="article">
                 <div class="tag">Conciencia</div>
                 <h4>La IA puede pensar y sentir como los humanos</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: La IA no tiene consciencia ni emociones. Solo procesa datos y patrones.</p>
-            </div>
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-1">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-1" role="definition" aria-hidden="true">❌ Mito: La IA no tiene consciencia ni emociones. Solo procesa datos y patrones.</p>
+            </article>
 
-            <div class="tarjeta verdad">
+            <article class="tarjeta verdad" role="article">
                 <div class="tag">Aprendizaje</div>
                 <h4>La IA puede aprender y mejorar con el tiempo</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">✅ Verdad: Los algoritmos de aprendizaje automático mejoran con más datos y
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-2">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-2" role="definition" aria-hidden="true">✅ Verdad: Los algoritmos de aprendizaje automático mejoran con más datos y
                     experiencia.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta mito">
+            <article class="tarjeta mito" role="article">
                 <div class="tag">Empleo</div>
                 <h4>La IA reemplazará todos los trabajos humanos</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Sustituirá tareas repetitivas, pero también creará nuevos empleos
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-3">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-3" role="definition" aria-hidden="true">❌ Mito: Sustituirá tareas repetitivas, pero también creará nuevos empleos
                     tecnológicos.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta verdad">
+            <article class="tarjeta verdad" role="article">
                 <div class="tag">Ética</div>
                 <h4>Los sistemas de IA pueden tener sesgos</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">✅ Verdad: Los sesgos pueden provenir de los datos con los que fue entrenada la IA.
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-4">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-4" role="definition" aria-hidden="true">✅ Verdad: Los sesgos pueden provenir de los datos con los que fue entrenada la IA.
                 </p>
-            </div>
+            </article>
 
-            <div class="tarjeta mito">
+            <article class="tarjeta mito" role="article">
                 <div class="tag">Precisión</div>
                 <h4>La IA es infalible y nunca comete errores</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Los modelos de IA pueden equivocarse si los datos o contextos son
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-5">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-5" role="definition" aria-hidden="true">❌ Mito: Los modelos de IA pueden equivocarse si los datos o contextos son
                     incorrectos.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta verdad">
+            <article class="tarjeta verdad" role="article">
                 <div class="tag">Aplicaciones</div>
                 <h4>La IA está presente en muchos dispositivos cotidianos</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">✅ Verdad: Asistentes de voz, cámaras inteligentes y sistemas de recomendación usan
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-6">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-6" role="definition" aria-hidden="true">✅ Verdad: Asistentes de voz, cámaras inteligentes y sistemas de recomendación usan
                     IA.</p>
-            </div>
+            </article>
             
-            <div class="tarjeta verdad">
+            <article class="tarjeta verdad" role="article">
                 <div class="tag">Procesamiento</div>
                 <h4>La IA sobresale en tareas de reconocimiento de patrones</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">✅ Verdad: La IA es excepcionalmente buena para identificar y clasificar patrones
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-7">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-7" role="definition" aria-hidden="true">✅ Verdad: La IA es excepcionalmente buena para identificar y clasificar patrones
                     complejos en grandes conjuntos de datos.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta mito">
+            <article class="tarjeta mito" role="article">
                 <div class="tag">Desarrollo</div>
                 <h4>Solo los expertos en programación pueden crear IA</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Hay herramientas 'No-Code' y 'Low-Code' que permiten a personas sin
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-8">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-8" role="definition" aria-hidden="true">❌ Mito: Hay herramientas 'No-Code' y 'Low-Code' que permiten a personas sin
                     profundos conocimientos de código usar modelos de IA.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta verdad">
+            <article class="tarjeta verdad" role="article">
                 <div class="tag">Capacidad</div>
                 <h4>La IA puede generar contenido original (texto, imágenes)</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">✅ Verdad: Modelos avanzados como GPT-4 o DALL-E pueden crear contenido nuevo, pero
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-9">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-9" role="definition" aria-hidden="true">✅ Verdad: Modelos avanzados como GPT-4 o DALL-E pueden crear contenido nuevo, pero
                     basado en el entrenamiento previo.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta mito">
+            <article class="tarjeta mito" role="article">
                 <div class="tag">Singularidad</div>
                 <h4>La 'singularidad' (IA que se mejora a sí misma) es inminente</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">❌ Mito: Es un concepto teórico y futurista. La mayoría de los científicos cree que
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-10">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-10" role="definition" aria-hidden="true">❌ Mito: Es un concepto teórico y futurista. La mayoría de los científicos cree que
                     estamos muy lejos de este punto.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta verdad">
+            <article class="tarjeta verdad" role="article">
                 <div class="tag">Uso de Datos</div>
                 <h4>La IA depende de grandes volúmenes de datos para ser efectiva</h4>
-                <button class="revelar">Revelar respuesta</button>
-                <p class="respuesta">✅ Verdad: Los modelos de aprendizaje profundo requieren 'Big Data' para entrenarse
+                <button class="revelar" aria-expanded="false" aria-controls="respuesta-11">Revelar respuesta</button>
+                <p class="respuesta" id="respuesta-11" role="definition" aria-hidden="true">✅ Verdad: Los modelos de aprendizaje profundo requieren 'Big Data' para entrenarse
                     y hacer predicciones precisas.</p>
-            </div>
+            </article>
 
         </section>
     </main>

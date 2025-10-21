@@ -132,9 +132,12 @@ body {
   cursor: pointer;
 }
 
-.card-info:hover {
+/* Se unifica el hover de las tarjetas */
+.card-info:hover,
+.tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(138, 180, 255, 0.1);
+  /* Se usa la sombra del .card-info para ambos, siendo consistente */
+  box-shadow: 0 0 20px rgba(138, 180, 255, 0.1); 
 }
 
 .card-overlay {
@@ -219,8 +222,11 @@ body {
   transition: all 0.3s ease;
   display: inline-block;
   margin: 5px;
+  /* Se añade foco visible para accesibilidad */
+  outline: none; 
 }
 
+.btn:focus,
 .btn.activo {
   background: var(--btn-gradient);
   color: #fff;
@@ -252,10 +258,8 @@ body {
   text-align: left;
 }
 
-.tarjeta:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(100, 84, 255, 0.1);
-}
+/* El hover de .tarjeta se ha movido arriba para unificarlo con .card-info:hover */
+
 
 .tag {
   display: inline-block;
@@ -284,9 +288,11 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s ease;
+  outline: none; /* Se añade foco visible para accesibilidad */
 }
 
-.revelar:hover {
+.revelar:hover,
+.revelar:focus {
   transform: scale(1.03);
 }
 
@@ -408,30 +414,7 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nav-links {
-    gap: 15px;
-  }
-  
-  .card-info,
-  .tarjeta {
-    width: 90%;
-    margin: 10px auto;
-    display: block;
-  }
-  
-  .explicaciones-grid,
-  .recursos-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) { /* Uso de media query más explícita */
   .card-info,
   .tarjeta {
     width: 90%;

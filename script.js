@@ -1,51 +1,70 @@
-// Mostrar respuestas
-let botones = document.querySelectorAll('.revelar');
+// =========================
+// GESTIÓN DE RESPUESTAS (REVELAR/OCULTAR)
+// =========================
 
-for (let i = 0; i < botones.length; i++) {
-  botones[i].onclick = () => {
-    let respuesta = botones[i].nextElementSibling;
+// Seleccionar todos los botones de la clase 'revelar'
+const botonesRevelar = document.querySelectorAll('.revelar');
 
-    if (respuesta.style.display == 'block') {
+botonesRevelar.forEach((boton, index) => {
+  // Enlazar el ID de respuesta para el atributo aria-controls
+  const idRespuesta = `respuesta-${index + 1}`;
+  const respuesta = boton.nextElementSibling;
+  
+  // Establecer el ID de la respuesta si no está ya en el HTML (Mejorado en el HTML)
+  // respuesta.id = idRespuesta; 
+
+  // Añadir un listener al botón
+  boton.addEventListener('click', () => {
+    // Alternar la visibilidad de la respuesta
+    const esVisible = respuesta.style.display === 'block';
+
+    if (esVisible) {
       respuesta.style.display = 'none';
-      botones[i].textContent = 'Revelar respuesta';
+      boton.textContent = 'Revelar respuesta';
+      boton.setAttribute('aria-expanded', 'false'); // ARIA para indicar que el contenido está oculto
+      respuesta.setAttribute('aria-hidden', 'true'); // ARIA para ocultar la respuesta
     } else {
       respuesta.style.display = 'block';
-      botones[i].textContent = 'Ocultar respuesta';
+      boton.textContent = 'Ocultar respuesta';
+      boton.setAttribute('aria-expanded', 'true'); // ARIA para indicar que el contenido está visible
+      respuesta.setAttribute('aria-hidden', 'false'); // ARIA para mostrar la respuesta
     }
-  };
-}
+  });
+});
 
-// Filtros
-let botonesFiltro = document.querySelectorAll('.filtros .btn');
-let tarjetas = document.querySelectorAll('.tarjeta');
 
-for (let i = 0; i < botonesFiltro.length; i++) {
-  botonesFiltro[i].onclick = () => {
-    for (let j = 0; j < botonesFiltro.length; j++) {
-      botonesFiltro[j].classList.remove('activo');
-    }
+// =========================
+// GESTIÓN DE FILTROS
+// =========================
 
-    botonesFiltro[i].classList.add('activo');
-    let tipo = botonesFiltro[i].dataset.filter;
+// Seleccionar todos los botones de la clase 'btn' dentro de 'filtros'
+const botonesFiltro = document.querySelectorAll('.filtros .btn');
+// Seleccionar todas las tarjetas de la clase 'tarjeta'
+const tarjetas = document.querySelectorAll('.tarjeta');
 
-    for (let k = 0; k < tarjetas.length; k++) {
-      if (tipo == 'todos' || tarjetas[k].classList.contains(tipo)) {
-        tarjetas[k].style.display = 'inline-block';
+botonesFiltro.forEach(boton => {
+  // Añadir un listener a cada botón de filtro
+  boton.addEventListener('click', () => {
+    const tipoFiltro = boton.dataset.filter;
+
+    // Desactivar todos los botones de filtro y poner aria-pressed=false
+    botonesFiltro.forEach(b => {
+      b.classList.remove('activo');
+      b.setAttribute('aria-pressed', 'false');
+    });
+
+    // Activar el botón clicado y poner aria-pressed=true
+    boton.classList.add('activo');
+    boton.setAttribute('aria-pressed', 'true');
+
+    // Recorrer las tarjetas y aplicar el filtro
+    tarjetas.forEach(tarjeta => {
+      // Mostrar la tarjeta si el filtro es 'todos' o si su clase coincide con el tipo de filtro
+      if (tipoFiltro === 'todos' || tarjeta.classList.contains(tipoFiltro)) {
+        tarjeta.style.display = 'inline-block';
       } else {
-        tarjetas[k].style.display = 'none';
+        tarjeta.style.display = 'none';
       }
-    }
-  };
-}
-
-// Navegación simple
-let navLinks = document.querySelectorAll('.nav-link');
-
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].onclick = () => {
-    for (let j = 0; j < navLinks.length; j++) {
-      navLinks[j].classList.remove('active');
-    }
-    navLinks[i].classList.add('active');
-  };
-}
+    });
+  });
+});

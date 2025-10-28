@@ -16,3 +16,4 @@ jobs:
           if [ -z "$JS_FILES" ]; then
             echo "No se encontraron archivos .js en esta rama."
             exit 1
+          fi

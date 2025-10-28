@@ -1,6 +1,9 @@
+/* eslint-disable jsdoc/check-tag-names */
 /**
  * @jest-environment jsdom
  */
+/* eslint-enable jsdoc/check-tag-names */
+
 const { alternarVisibilidad } = require('../js/main.js');
 
 describe('alternarVisibilidad', () => {

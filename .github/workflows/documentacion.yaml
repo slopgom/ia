@@ -1,4 +1,4 @@
-name: Docs
+name: Documentación
 
 on:
   workflow_dispatch:

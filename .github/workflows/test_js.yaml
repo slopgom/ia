@@ -1,0 +1,20 @@
+name: Test JS
+
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6.0.0
+
+      - name: Instalar dependencias
+        run: npm ci || npm install
+
+      - name: Ejecutar tests
+        run: npm test

@@ -1,44 +1,36 @@
 /**
- * Función que maneja la lógica de alternar la visibilidad de un elemento
- * y actualizar el texto de su botón asociado.
- * * @param {string} idContenedor - El ID del div de contenido a ocultar/mostrar.
- * @param {HTMLElement} boton - La referencia al elemento botón que fue clickeado.
+ * Alterna visibilidad de un elemento y cambia el texto del botón
  */
 function alternarVisibilidad(idContenedor, boton) {
-    const contenido = document.getElementById(idContenedor);
+  const contenido = document.getElementById(idContenedor);
+  contenido.classList.toggle('hidden');
 
-    // Añadir o quitar la clase 'hidden'
-    contenido.classList.toggle('hidden');
-
-    // Actualizar el texto del botón (Feedback)
-    if (contenido.classList.contains('hidden')) {
-        boton.textContent = 'Mostrar Sección';
-    } else {
-        boton.textContent = 'Ocultar Sección';
-    }
+  if (contenido.classList.contains('hidden')) {
+    boton.textContent = 'Mostrar Sección';
+  } else {
+    boton.textContent = 'Ocultar Sección';
+  }
 }
 
 /**
- * Inicializa los Event Listeners para los botones de toggle.
- * Mejora la separación de preocupaciones (No 'onclick' en HTML).
+ * Inicializa los listeners
  */
 function inicializarBotones() {
-    const botonVerdades = document.getElementById('verdades-btn');
-    const contenidoVerdadesId = 'verdades-list';
-    
-    const botonMentiras = document.getElementById('mentiras-btn');
-    const contenidoMentirasId = 'mentiras-list';
+  const botonVerdades = document.getElementById('verdades-btn');
+  const botonMentiras = document.getElementById('mentiras-btn');
 
-    // Añadir el manejador de eventos a cada botón
-    botonVerdades.addEventListener('click', () => {
-        alternarVisibilidad(contenidoVerdadesId, botonVerdades);
-    });
+  botonVerdades.addEventListener('click', () => {
+    alternarVisibilidad('verdades-list', botonVerdades);
+  });
 
-    botonMentiras.addEventListener('click', () => {
-        alternarVisibilidad(contenidoMentirasId, botonMentiras);
-    });
+  botonMentiras.addEventListener('click', () => {
+    alternarVisibilidad('mentiras-list', botonMentiras);
+  });
 }
 
-// Ejecutar la inicialización cuando el DOM esté completamente cargado.
-// Esto asegura que podemos obtener referencias a los botones (getElementById).
 document.addEventListener('DOMContentLoaded', inicializarBotones);
+
+// Exportar funciones para Jest
+if (typeof module !== 'undefined') {
+  module.exports = { alternarVisibilidad, inicializarBotones };
+}

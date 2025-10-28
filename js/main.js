@@ -1,5 +1,9 @@
 /**
- * Alterna visibilidad de un elemento y cambia el texto del botón
+ * Función que maneja la lógica de alternar la visibilidad de un elemento
+ * y actualizar el texto de su botón asociado.
+ *
+ * @param {string} idContenedor - El ID del div de contenido a ocultar/mostrar.
+ * @param {HTMLElement} boton - La referencia al elemento botón que fue clickeado.
  */
 function alternarVisibilidad(idContenedor, boton) {
   const contenido = document.getElementById(idContenedor);

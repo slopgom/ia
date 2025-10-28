@@ -10,8 +10,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+           node-version: 20
+
 
       - name: Instalar dependencias
         run: npm ci || npm install

@@ -12,7 +12,7 @@ module.exports = {
   plugins: ["jsdoc"],
   extends: ["eslint:recommended", "plugin:jsdoc/recommended"],
   rules: {
-    // ⚙️ Requerir JSDoc en funciones, métodos y clases públicas
+    // Requerir JSDoc en funciones, métodos y clases públicas
     "jsdoc/require-jsdoc": ["warn", {
       publicOnly: true,
       require: {
@@ -23,8 +23,16 @@ module.exports = {
         FunctionExpression: true
       }
     }],
-    // visar (no fallar) si faltan @param o @returns
+    // Avisar (no fallar) si faltan @param o @returns
     "jsdoc/require-param": "warn",
     "jsdoc/require-returns": "warn"
+  },
+  settings: {
+    jsdoc: {
+      tagNamePreference: {
+        "jest-environment": false
+      }
+    }
   }
 };
+

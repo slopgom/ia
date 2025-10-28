@@ -98,11 +98,7 @@ jobs:
     name: 4) Deploy a Vercel (producción)
     runs-on: ubuntu-latest
     needs: docs
-    # Solo se despliega si hay docs y si la rama es main
-    if: >
-      needs.docs.outputs.has_docs == 'true' &&
-      github.ref == 'refs/heads/main' &&
-      success()
+    if: needs.docs.outputs.has_docs == 'true'   # despliega solo si hay docs
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
@@ -120,7 +116,7 @@ jobs:
           exit 1
 
       - name: Desplegar a Vercel (prod)
-        run: vercel --prod --yes --token "$VERCEL_TOKEN"
+        run: vercel --prod --yes --token "$VERCEL_TOKEN"   
 
       - name: Confirmar despliegue
         if: success()
